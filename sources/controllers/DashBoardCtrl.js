@@ -1,8 +1,8 @@
 (function () {
     angular.module('work-planner')
-        .controller('DashBoardCtrl', ['$state', '$rootScope', '$scope', DashBoardCtrl]);
+        .controller('DashBoardCtrl', ['$scope', DashBoardCtrl]);
 
-    function DashBoardCtrl($state, $rootScope, $scope) {
+    function DashBoardCtrl($scope) {
 
     }
 })
