@@ -9,7 +9,7 @@
             $stateProvider
             .state('DashBoard', {
                 url: "/DashBoard",
-                templateURL: "sources/views/DashBoard.html"
+                templateURL: "/work-planner/sources/views/DashBoard.html"
             })
             $urlRouterProvider.otherwise('DashBoard')
         }]);
