@@ -5,7 +5,7 @@
         <title>Work Planner</title>
         <!--Library references-->
         <link href="/work-planner/sources/lib/fullcalendar/fullcalendar.css" rel="stylesheet"/>
-        <link href="/work-planner/sources/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+        <link href="/work-planner/sources/css/bootstrap/bootstrap.css" rel="stylesheet" />
         <link href="/work-planner/sources/css/toaster.css" rel="stylesheet" />
         <script src="/work-planner/sources/lib/moment.js"></script>
         <script src="/work-planner/sources/lib/moment-precise-range.js"></script>
@@ -47,9 +47,10 @@
             firebase.initializeApp(config);
         </script>
     </head>
-    <body ng-app="work-planner" ng-strict-di>
-        <div class="col-sm-6">Henlo Fren</div>
-        <div class="col-sm-6">Henlo Henlo</div>
+    <body ng-app="work-planner">
+        <div class="col-md-6">Henlo Fren</div>
+        <div class="col-md-6">Henlo Henlo</div>
+
         <ui-view></ui-view>
     </body>
 
