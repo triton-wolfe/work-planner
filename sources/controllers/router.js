@@ -11,6 +11,6 @@
                 url: "/DashBoard",
                 templateURL: "/work-planner/sources/views/DashBoard.html"
             });
-            $urlRouterProvider.otherwise('DashBoard')
+            $urlRouterProvider.otherwise('DashBoard');
         }]);
 })(window);
