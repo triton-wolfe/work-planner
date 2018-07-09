@@ -1,8 +1,8 @@
 (function () {
     angular.module('work-planner')
-    .controller('ProjectBoardCtrl', ['$scope', 'firebase', ProjectBoardCtrl]);
+    .controller('ProjectBoardCtrl', ['$scope', 'angularfire', ProjectBoardCtrl]);
 
-    function ProjectBoardCtrl($scope, firebase) {
+    function ProjectBoardCtrl($scope, angularfire) {
         var dbRef = new Firebase("https://work-planner-7bf84.firebaseio.com/");
         var projectsRef = dbRef.child('projects');
         var thisCtrl = this;
