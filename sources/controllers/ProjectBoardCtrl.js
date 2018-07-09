@@ -10,7 +10,7 @@
         projectsRef.on('value', function(snap) {
             value = snap.val();
             for (var key in value) {
-                this.projects.push(value[key]);
+                thisCtrl.projects.push(value[key]);
             }
         });
     };
