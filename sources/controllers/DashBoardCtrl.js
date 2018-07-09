@@ -3,6 +3,6 @@
     .controller('DashBoardCtrl', ['$scope', DashBoardCtrl]);
 
     function DashBoardCtrl($scope) {
-        $scope.field = 'hi';
+        this.field = 'hi';
     };
 })();
