@@ -1,10 +1,9 @@
 (function () {
     angular.module('work-planner')
-    .controller('ProjectBoardCtrl', ['$scope', Firebase, ProjectBoardCtrl]);
+    .controller('ProjectBoardCtrl', ['$scope', 'rootRef', ProjectBoardCtrl]);
 
-    function ProjectBoardCtrl($scope, Firebase) {
-        var dbRef = new Firebase("https://work-planner-7bf84.firebaseio.com/");
-        var projectsRef = dbRef.child('projects');
+    function ProjectBoardCtrl($scope, rootRef) {
+        var projectsRef = rootRef.child('projects');
         var thisCtrl = this;
         this.projects = [];
 
