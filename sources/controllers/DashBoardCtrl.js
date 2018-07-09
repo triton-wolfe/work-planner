@@ -1,5 +1,5 @@
 (function () {
-    angular.module('work-planner', [])
+    angular.module('work-planner')
     .controller('DashBoardCtrl', ['$scope', DashBoardCtrl]);
 
     function DashBoardCtrl($scope) {

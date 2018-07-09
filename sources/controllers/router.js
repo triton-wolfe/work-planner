@@ -9,7 +9,8 @@
             $stateProvider
             .state('DashBoard', {
                 url: "/DashBoard",
-                templateUrl: "/work-planner/sources/views/DashBoard.html"
+                templateUrl: "/work-planner/sources/views/DashBoard.html",
+                params: {obj: null}
             });
             $urlRouterProvider.otherwise('DashBoard');
         }]);
