@@ -8,9 +8,10 @@
         this.projects = [];
 
         projectsRef.on('value', function(snap) {
-            snap.val().forEach(function (item) {
-                thisCtrl.projects.push(item);
-            })
+            var value = snap.val();
+            // forEach(function (item) {
+            //     thisCtrl.projects.push(item);
+            // })
         });
     };
 })();
