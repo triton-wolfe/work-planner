@@ -21,6 +21,18 @@
         <script src="/work-planner/sources/lib/angular/spin.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
         <script src="/work-planner/sources/lib/angular/angularfire.js"></script>
+        <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAW4W7TAYcZoE2Ju3tH9f0FMoKf5BfuePQ",
+            authDomain: "work-planner-7bf84.firebaseapp.com",
+            databaseURL: "https://work-planner-7bf84.firebaseio.com",
+            projectId: "work-planner-7bf84",
+            storageBucket: "",
+            messagingSenderId: "532751682748"
+        };
+        firebase.initializeApp(config);
+        </script>
         <style type="text/css"></style>
         <script src="/work-planner/sources/lib/angular/angular-sanitize.js"></script>
         <script src="/work-planner/sources/lib/angular-css.min.js"></script>
@@ -40,18 +52,6 @@
         <script src="/work-planner/sources/controllers/WorkItemBoardCtrl.js"></script>
         <script src="/work-planner/sources/controllers/TaskBoardCtrl.js"></script>
 
-        <script>
-            // Initialize Firebase
-            var config = {
-                apiKey: "AIzaSyAW4W7TAYcZoE2Ju3tH9f0FMoKf5BfuePQ",
-                authDomain: "work-planner-7bf84.firebaseapp.com",
-                databaseURL: "https://work-planner-7bf84.firebaseio.com",
-                projectId: "work-planner-7bf84",
-                storageBucket: "",
-                messagingSenderId: "532751682748"
-            };
-            firebase.initializeApp(config);
-        </script>
     </head>
     <body ng-app="work-planner">
         <div class="row">
