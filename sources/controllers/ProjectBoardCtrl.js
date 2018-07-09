@@ -4,8 +4,8 @@
 
     function ProjectBoardCtrl($scope, firebase) {
         var projectsRef = firebase.database().ref().child('projects');
-        var thisCtrl = this;
         this.projects = [];
+        var thisCtrl = this;
 
         projectsRef.on('value', function(snap) {
             value = snap.val();
