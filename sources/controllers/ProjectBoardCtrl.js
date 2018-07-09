@@ -9,7 +9,7 @@
 
         projectsRef.on('value', function(snap) {
             value = snap.val();
-            foreach (var key in value) {
+            for (var key in value) {
                 this.projects.push(value[key]);
             }
         });
