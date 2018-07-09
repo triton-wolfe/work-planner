@@ -3,7 +3,8 @@
     .controller('ProjectBoardCtrl', ['$scope', 'firebase', ProjectBoardCtrl]);
 
     function ProjectBoardCtrl($scope, firebase) {
-        var projectsRef = firebase.ref().child('projects');
+        var dbRef = new Firebase("https://work-planner-7bf84.firebaseio.com/");
+        var projectsRef = dbRef.child('projects');
         var thisCtrl = this;
         this.projects = [];
 
