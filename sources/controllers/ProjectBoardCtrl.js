@@ -5,7 +5,8 @@
     function ProjectBoardCtrl($scope, firebaseSvc) {
         $scope.projects = [];
 
-        firebaseSvc.getProjects().$loaded().then(function (result) {
+        var promise = firebaseSvc.getProjects().$loaded()
+        promise.then(function (result) {
             $scope.projects = result;
         });
     };
