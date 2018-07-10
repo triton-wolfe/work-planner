@@ -14,13 +14,13 @@ angular.module('work-planner')
                 };
             }],
             template: `<nav class="navbar navbar-default navbar-fixed-top">
-                <div class="container">
+                <div class="container-fluid">
                     <div class="navbar-header">
                         <img class="navbar-brand" ng-click="goToDashBoard()"
                             src="/work-planner/sources/images/logo.jpg"
                             height="50"/>
                     </div>
-                    <div id="navbar" class="navbar-collapse collapse">
+                    <div id="navbar" class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
                             <li class="active"><a ng-click="goToDashBoard()">DashBoard</a></li>
                             <li><a ng-click="goToCalender()">Calendar</a></li>
