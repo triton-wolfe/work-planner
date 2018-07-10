@@ -4,13 +4,12 @@
 
     function ProjectBoardCtrl($scope, firebase) {
         var projectsRef = firebase.database().ref().child('projects');
-        var thisCtrl = this;
-        thisCtrl.projects = [];
+        $scope.projects = [];
 
         projectsRef.on('value', function(snap) {
             value = snap.val();
             for (var key in value) {
-                thisCtrl.projects.push(value[key]);
+                $scope.projects.push(value[key]);
             }
         });
     };
