@@ -1,18 +1,13 @@
 (function () {
     angular.module('work-planner')
-    .controller('ProjectBoardCtrl', ['$scope', 'firebase', ProjectBoardCtrl]);
+    .controller('ProjectBoardCtrl', ['$scope', 'firebaseSvc', ProjectBoardCtrl]);
 
-    function ProjectBoardCtrl($scope, firebase) {
-        var projectsRef = firebase.database().ref().child('projects');
+    function ProjectBoardCtrl($scope, firebaseSvc) {
         $scope.projects = [];
+        var getProjectsSuccess = function (result) {
+            $scope.projects = result;
+        }
+        firebaseSvc.getProjects().then(getProjectsSuccess);
 
-        projectsRef.on('value', function(snap) {
-            value = snap.val();
-            $scope.$apply(function () {
-                for (var key in value) {
-                    $scope.projects.push(value[key]);
-                }
-            });
-        });
     };
 })();
