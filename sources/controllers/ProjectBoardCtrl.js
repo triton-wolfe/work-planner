@@ -10,6 +10,7 @@
             value = snap.val();
             for (var key in value) {
                 $scope.projects.push(value[key]);
+                $scope.$apply();
             }
         });
     };
