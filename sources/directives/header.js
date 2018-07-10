@@ -13,23 +13,18 @@ angular.module('work-planner')
                     $state.go('Calendar');
                 };
             }],
-            template: `<div class="navbar navbar-default">
+            template: `<div class="navbar navbar-default row">
                 <div class="navbar-brand">
                     <img ng-click="goToDashBoard()"
                         src="/work-planner/sources/images/logo.jpg"
-                        height="50"/>
+                        height="30"/>
+                    <span> Work-Planner</span>
                 </div>
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a class="nav-item" ng-click="goToDashBoard()">DashBoard</a>
-                    </li>
-                    <li>
-                        <a class="nav-item" ng-click="goToCalender()">Calendar</a>
-                    </li>
-                    <li>
-                        <a class="nav-item" ng-click="goToProjects()">Projects</a>
-                    </li>
-                </ul>
+                <div>
+                    <a class="nav-item" ng-click="goToDashBoard()">DashBoard</a>
+                    <a class="nav-item" ng-click="goToCalender()">Calendar</a>
+                    <a class="nav-item" ng-click="goToProjects()">Projects</a>
+                </div>
             </div>`
         }
     });

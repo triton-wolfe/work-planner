@@ -8,10 +8,11 @@
 
         projectsRef.on('value', function(snap) {
             value = snap.val();
-            for (var key in value) {
-                $scope.projects.push(value[key]);
-            }
-            $scope.$apply();
+            $scope.$apply(function () {
+                for (var key in value) {
+                    $scope.projects.push(value[key]);
+                }
+            });
         });
     };
 })();
