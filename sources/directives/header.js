@@ -16,16 +16,14 @@ angular.module('work-planner')
             template: `<nav class="navbar navbar-default navbar-fixed-top">
                 <div class="container">
                     <div class="navbar-header">
-                        <img class="navbar-brand" ng-click="vm.goToDashBoard()"
+                        <img class="navbar-brand" ng-click="goToDashBoard()"
                             src="/work-planner/sources/images/logo.jpg"
                             height="50"/>
                     </div>
-                    <div id="navbar" class="navbar-collapse collapse">
-                      <ul class="nav navbar-nav">
-                        <li><span ng-click="goToDashBoard()">DashBoard</span></li>
-                        <li><span ng-click="goToCalender()">Calender</span></li>
-                        <li><span ng-click="goToProjects()">Projects</span></li>
-                      </ul>
+                    <div id="navbar" class="nav navbar-nav">
+                        <span ng-click="goToDashBoard()">DashBoard</span>
+                        <span ng-click="goToCalender()">Calender</span>
+                        <span ng-click="goToProjects()">Projects</span>
                     </div>
                 </div>
             </nav>`
