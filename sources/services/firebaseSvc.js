@@ -6,7 +6,7 @@
         var dbRef = firebase.database().ref()
 
         this.getProjects = function () {
-            return $firebaseArray(dbRef.child('projects'));
+            return $firebaseArray(dbRef.child('Projects'));
         }
 
         this.getWorkItems = function (projectId) {
