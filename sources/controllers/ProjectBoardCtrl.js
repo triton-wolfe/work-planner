@@ -8,7 +8,6 @@
         var promise = firebaseSvc.getProjects().$loaded();
         promise.then(function (result) {
             $scope.projects = result;
-            console.log(result)
         });
     };
 })();
