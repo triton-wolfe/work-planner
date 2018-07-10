@@ -9,22 +9,39 @@ angular.module('work-planner')
                 $scope.goToProjects = function () {
                     $state.go('ProjectBoard');
                 };
-                $scope.goToCalender = function () {
+                $scope.goToCalendar = function () {
                     $state.go('Calendar');
                 };
             }],
-            template: `<div class="navbar navbar-default row container">
-                <div class="navbar-brand">
-                    <img ng-click="goToDashBoard()"
-                        src="/work-planner/sources/images/logo.jpg"
-                        height="25"/>
-                    <span> Work-Planner</span>
-                </div>
-                <div>
-                    <a class="nav-item" ng-click="goToDashBoard()">DashBoard</a>
-                    <a class="nav-item" ng-click="goToCalender()">Calendar</a>
-                    <a class="nav-item" ng-click="goToProjects()">Projects</a>
-                </div>
-            </div>`
+            template: `<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <a class="navbar-brand" ng-click="goToDashBoard()">
+                <img src="/work-planner/sources/images/logo.jpg" class="rounded navbar-logo">
+                Autograder Docs
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" ng-click="goToDashBoard()">
+                            DashBoard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ng-click="goToCalendar()">
+                            Calendar
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ng-click="goToProjects()">
+                            Projects
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>`
         }
     });
