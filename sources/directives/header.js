@@ -20,10 +20,12 @@ angular.module('work-planner')
                             src="/work-planner/sources/images/logo.jpg"
                             height="50"/>
                     </div>
-                    <div id="navbar" class="nav navbar-nav">
-                        <span ng-click="goToDashBoard()">DashBoard</span>
-                        <span ng-click="goToCalender()">Calender</span>
-                        <span ng-click="goToProjects()">Projects</span>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a ng-click="goToDashBoard()">DashBoard</a></li>
+                            <li><a ng-click="goToCalender()">Calendar</a></li>
+                            <li><a ng-click="goToProjects()">Projects</a></li>
+                        </ul>
                     </div>
                 </div>
             </nav>`
