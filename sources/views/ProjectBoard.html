@@ -11,7 +11,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="project in projects" ng-mouseenter="project.show=true" ng-mouseleave"project.show=false">
+                <tr ng-repeat="project in projects" ng-mouseenter="project.show=true" ng-mouseleave="project.show=false">
                     <td class="text-center" ng-show="project.show"><i class="fa fa-bars" aria-hidden="true"></i></td>
                     <td ng-hide="!project.show">&nbsp</td>
                     <td class="text-left">{{project.Name}}</td>
