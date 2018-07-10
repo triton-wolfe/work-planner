@@ -15,7 +15,7 @@
                 }
                 deffered.resolve(toReturn);
             });
-            return deffered;
+            return deffered.promise;
         }
     };
 })();
