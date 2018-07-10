@@ -13,11 +13,11 @@ angular.module('work-planner')
                     $state.go('Calendar');
                 };
             }],
-            template: `<div class="navbar navbar-default row">
+            template: `<div class="navbar navbar-default row container">
                 <div class="navbar-brand">
                     <img ng-click="goToDashBoard()"
                         src="/work-planner/sources/images/logo.jpg"
-                        height="30"/>
+                        height="25"/>
                     <span> Work-Planner</span>
                 </div>
                 <div>

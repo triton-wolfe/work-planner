@@ -7,7 +7,7 @@
 
         this.getProjects = function () {
             var deffered = $q.defer();
-            dbRef.child('projects').once('value' function (snap) {
+            dbRef.child('projects').once('value', function (snap) {
                 var toReturn = [];
                 value = snap.val();
                 for (var key in value) {
