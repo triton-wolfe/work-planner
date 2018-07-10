@@ -16,7 +16,9 @@ angular.module('work-planner')
             template: `<nav class="navbar navbar-expand-sm bg-light navbar-light">
             <a class="navbar-brand" ng-click="goToDashBoard()">
                 <img src="/work-planner/sources/images/logo.jpg" class="rounded navbar-logo"
-                    height="37">Work Planner</a>
+                    height="37">
+                Work Planner
+            </a>
             <div class="collapse navbar-collapse" id="mainNavbar">
                 <ul class="nav navbar-nav">
                     <li class="nav-item">
