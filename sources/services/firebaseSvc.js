@@ -1,21 +1,20 @@
 (function () {
     angular.module('work-planner')
-        .service('firebaseSvc', ['$q', 'firebase', firebaseSvc]);
+        .service('firebaseSvc', ['$q', 'firebase', '$firebaseObject', '$firebaseArray', firebaseSvc]);
 
-    function firebaseSvc($q, firebase) {
+    function firebaseSvc($q, firebase, $firebaseObject, $firebaseArray) {
         var dbRef = firebase.database().ref()
 
         this.getProjects = function () {
-            var deffered = $q.defer();
-            dbRef.child('projects').once('value', function (snap) {
-                var toReturn = [];
-                value = snap.val();
-                for (var key in value) {
-                    toReturn.push(value[key]);
-                }
-                deffered.resolve(toReturn);
-            });
-            return deffered.promise;
+            return $firebaseArray(dbRef.child('projects'));
+        }
+
+        this.getWorkItems = function (projectId) {
+            return $firebaseArray(dbRef.child('WorkItems').orderByChild('ProjectId').equalTo(projectId));
+        }
+
+        this.getTasks = function(workItemId) {
+            return $firebaseArray(dbRef.child('Tasks').orderByChild('WorkItemId').equalTo(workItemId));
         }
     };
 })();
