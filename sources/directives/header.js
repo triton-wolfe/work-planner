@@ -13,7 +13,7 @@ angular.module('work-planner')
                     $state.go('Calendar');
                 };
             }],
-            template: `<nav class="navbar navbar-expand-sm bg-light navbar-light">
+            template: `<nav class="navbar navbar-expand-sm bg-light navbar-light col-md-11 container">
             <a class="navbar-brand" ng-click="goToDashBoard()">
                 <img src="/work-planner/sources/images/logo.jpg" class="rounded navbar-logo"
                     height="37">
