@@ -13,18 +13,18 @@ angular.module('work-planner')
                     $state.go('Calendar');
                 };
             }],
-            template: `<nav class="navbar navbar-default navbar-fixed-top">
+            template: `<nav class="navbar navbar-expand-md navbar-default navbar-fixed-top">
                 <div class="container-fluid">
-                    <div class="navbar-header">
-                        <img class="navbar-brand" ng-click="goToDashBoard()"
+                    <div class="navbar-brand">
+                        <img ng-click="goToDashBoard()"
                             src="/work-planner/sources/images/logo.jpg"
                             height="50"/>
                     </div>
                     <div id="navbar" class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a ng-click="goToDashBoard()">DashBoard</a></li>
-                            <li><a ng-click="goToCalender()">Calendar</a></li>
-                            <li><a ng-click="goToProjects()">Projects</a></li>
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a ng-click="goToDashBoard()">DashBoard</a></li>
+                            <li class="nav-item"><a ng-click="goToCalender()">Calendar</a></li>
+                            <li class="nav-item"><a ng-click="goToProjects()">Projects</a></li>
                         </ul>
                     </div>
                 </div>
