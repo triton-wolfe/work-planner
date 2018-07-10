@@ -13,9 +13,10 @@ angular.module('work-planner')
                     $state.go('Calendar');
                 };
             }],
-            template: `<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            template: `<nav class="navbar navbar-expand-sm bg-light navbar-light">
             <a class="navbar-brand" ng-click="goToDashBoard()">
-                <img src="/work-planner/sources/images/logo.jpg" class="rounded navbar-logo">
+                <img src="/work-planner/sources/images/logo.jpg" class="rounded navbar-logo"
+                    height="32">
                 Autograder Docs
             </a>
 
