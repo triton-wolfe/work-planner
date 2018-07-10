@@ -11,12 +11,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="project in projects" ng-mouseenter="show=true" ng-mouseleave"show=false">
-                    <td class="text-center" ng-show="show"><i class="fa fa-bars" aria-hidden="true"></i></td>
+                <tr ng-repeat="project in projects" ng-mouseenter="project.show=true" ng-mouseleave"project.show=false">
+                    <td class="text-center" ng-show="project.show"><i class="fa fa-bars" aria-hidden="true"></i></td>
+                    <td ng-hide="!project.show">&nbsp</td>
                     <td class="text-left">{{project.Name}}</td>
                     <td class="text-center">0</td>
-                    <td class="text-center" ng-show="show"><i class="fa fa-pencil-square-0" aria-hidden="true"></i></td>
-                    <td class="text-center" ng-show="show"><i class="fa fa-times" aria-hidden="true"></i></td>
+                    <td class="text-center" ng-show="project.show"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
+                    <td class="text-center" ng-show="project.show"><i class="fa fa-times" aria-hidden="true"></i></td>
                 </tr>
             </tbody>
         </table>
