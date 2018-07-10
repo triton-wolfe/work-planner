@@ -2,7 +2,7 @@ angular.module('work-planner')
     .directive('header', function () {
         return {
             restrict: "E",
-            controller: ['$scope', '$state' function($scope, $state) {
+            controller: ['$scope', '$state', function($scope, $state) {
                 $scope.goToDashBoard = function () {
                     $state.go('DashBoard');
                 };
