@@ -13,6 +13,11 @@
                 params: {obj: null}
             })
             .state('Calendar', {
+                url: "/Calendar",
+                templateUrl: "/work-planner/sources/view/Calendar.html",
+                params: {obj: null}
+            })
+            .state('ProjectBoard', {
                 url: "/ProjectBoard",
                 templateUrl: "/work-planner/sources/views/ProjectBoard.html",
                 params: {obj: null}
