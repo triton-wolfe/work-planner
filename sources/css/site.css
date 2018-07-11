@@ -48,7 +48,11 @@ tr {
 }
 
 .btn-primary[disabled], .btn-primary[disabled]:hover {
-        background-color: #aaa !important;
-        border-color: #aaa !important;
-        cursor: not-allowed;
-    }
+    background-color: #aaa !important;
+    border-color: #aaa !important;
+    cursor: not-allowed;
+}
+
+.bg-beige.navbar-light {
+    background-color: #dcdcc6
+}
