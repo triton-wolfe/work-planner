@@ -12,20 +12,39 @@
             </thead>
             <tbody>
                 <tr ng-repeat="project in projects" ng-mouseenter="project.show=true" ng-mouseleave="project.show=false">
-                    <td class="text-center" ng-click="openProject(project.$id)">
+                    <td class="text-center" ng-show="!editing && !deleting" ng-click="openProject(project.$id)">
                         <i class="fa fa-bars" ng-show="project.show" aria-hidden="true"></i>
                     </td>
+                    <td ng-show="editing || deleting">&nbsp</td>
                     <td class="text-left">{{project.Name}}</td>
                     <td class="text-center">{{project.NumWorkItems}}</td>
-                    <td class="text-center" ng-click="editProject(project.$id)">
+                    <td class="text-center" ng-show="!editing && !deleting" ng-click="editProject(project.$id)">
                         <i class="fa fa-pencil-square-o" ng-show="project.show" aria-hidden="true"></i>
                     </td>
-                    <td class="text-center" ng-click="deleteProject(project.$id)">
+                    <td class="text-center" ng-show="!editing && !deleting" ng-click="deleteProject(project.$id)">
                         <i class="fa fa-times" ng-show="project.show" aria-hidden="true"></i>
+                    </td>
+                </tr>
+                <tr ng-show="editing">
+                    <td>&nbsp</td>
+                    <td>
+                        <input class="form-control" form="text" ng-model="item.Name" />
+                    </td>
+                    <td>&nbsp</td>
+                    <td class="text-center" ng-click="completeEdit()">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </td>
+                    <td class="text-center" ng-click="abandonEdit()">
+                        <i class="fa fa-times" aria-hidden="true"></i>
                     </td>
                 </tr>
             </tbody>
         </table>
-        <button class="btn btn-primary">Add New Project</button>
+        <button class="btn btn-primary" ng-click="addProject()" ng-show="!editing && !deleting">Add New Project</button>
+        <div ng-show="deleting">
+            <strong>Confirm Deletion?</strong><br />
+            <button class="btn btn-primary" ng-click="confirmDelete()">Confirm</button>
+            <button class="btn btn-primary" ng-click="abandonDelete()">Cancel</button>
+        </div>
     </div>
 </div>
