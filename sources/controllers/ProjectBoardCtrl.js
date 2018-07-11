@@ -14,7 +14,7 @@
         });
 
         $scope.addProject= function () {
-            $scope.item.Name = "New Project";
+            $scope.item.Name = null;
             $scope.editing = true;
         }
 
