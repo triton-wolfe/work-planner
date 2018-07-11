@@ -33,6 +33,7 @@ tr {
 
 .btn.btn-primary:active {
     background: #538234 !important;
+    border: none;
 }
 
 .btn-primary[disabled], .btn-primary[disabled]:hover {
