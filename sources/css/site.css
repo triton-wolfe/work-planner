@@ -16,6 +16,10 @@ tr {
     border-bottom: solid 1px #538234;
 }
 
+.table-hover tbody tr:hover {
+  background-color: rgba(83, 130, 52, 0.075);
+}
+
 .btn.btn-primary {
     outline: none;
     border: none;
