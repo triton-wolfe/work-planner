@@ -27,6 +27,10 @@
     background: #888;
 }
 
+.btn.btn-primary:active {
+    background: #538234;
+}
+
 .btn-primary[disabled], .btn-primary[disabled]:hover {
         background-color: #aaa !important;
         border-color: #aaa !important;
