@@ -26,7 +26,7 @@
 
         $scope.completeEdit = function () {
             if ($scope.editId === null) {
-                $scope.projects.add({
+                $scope.projects.$add({
                     Name: $scope.item.Name,
                     Description: '',
                     NumWorkItems: 0
