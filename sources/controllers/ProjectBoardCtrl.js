@@ -30,7 +30,7 @@
 
         $scope.completeEdit = function () {
             if ($scope.editId === null) {
-                $scope.projects.$add(item);
+                $scope.projects.$add($scope.item);
             } else {
                 $scope.projects[$scope.projects.$indexFor($scope.editId)].Name = $scope.item.Name;
                 $scope.projects.$save($scope.projects.$indexFor($scope.editId));
