@@ -4,6 +4,11 @@
 
     function ProjectBoardCtrl($scope, firebaseSvc) {
         $scope.projects = [];
+        $scope.item = {
+            Name: null,
+            Description: null,
+            NumWorkItems: 0,
+        }
         $scope.editing = false;
         $scope.editId = null;
         $scope.deleting = false;
@@ -14,7 +19,6 @@
         });
 
         $scope.addProject= function () {
-            $scope.item.Name = null;
             $scope.editing = true;
         }
 
@@ -26,14 +30,15 @@
 
         $scope.completeEdit = function () {
             if ($scope.editId === null) {
-                $scope.projects.$add({
-                    Name: $scope.item.Name,
-                    Description: '',
-                    NumWorkItems: 0
-                });
+                $scope.projects.$add(item);
             } else {
                 $scope.projects[$scope.projects.$indexFor($scope.editId)].Name = $scope.item.Name;
                 $scope.projects.$save($scope.projects.$indexFor($scope.editId));
+            }
+            $scope.item = {
+                Name: null,
+                Description: null,
+                NumWorkItems: 0
             }
             $scope.editId = null;
             $scope.editing = false;
