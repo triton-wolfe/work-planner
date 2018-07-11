@@ -33,7 +33,7 @@
                 });
             } else {
                 $scope.projects[$scope.projects.$indexFor($scope.editId)].Name = $scope.item.Name;
-                $scope.projects.save($scope.projects.$indexFor($scope.editId));
+                $scope.projects.$save($scope.projects.$indexFor($scope.editId));
             }
             $scope.editId = null;
             $scope.editing = false;

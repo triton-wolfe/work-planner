@@ -24,11 +24,12 @@
                     <td class="text-center" ng-show="!editing && !deleting" ng-click="deleteProject(project.$id)">
                         <i class="fa fa-times" ng-show="project.show" aria-hidden="true"></i>
                     </td>
+                    <td ng-show="editing || deleting">&nbsp</td><td ng-show="editing || deleting">&nbsp</td>
                 </tr>
                 <tr ng-show="editing">
                     <td>&nbsp</td>
                     <td>
-                        <input class="form-control" form="text" ng-model="item.Name" />
+                        <input class="form-control form-control-sm" form="text" ng-model="item.Name" />
                     </td>
                     <td>&nbsp</td>
                     <td class="text-center" ng-click="completeEdit()">
