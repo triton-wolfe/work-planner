@@ -16,7 +16,7 @@
                         <i class="fa fa-bars" ng-show="project.show" aria-hidden="true"></i>
                     </td>
                     <td class="text-left">{{project.Name}}</td>
-                    <td class="text-center">{{(project.WorkItemIds||[]).count}}</td>
+                    <td class="text-center">{{project.NumWorkItems}}</td>
                     <td class="text-center" ng-click="editProject(project.$id)">
                         <i class="fa fa-pencil-square-o" ng-show="project.show" aria-hidden="true"></i>
                     </td>
