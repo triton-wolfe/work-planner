@@ -13,18 +13,18 @@
             $scope.projects = result;
         });
 
-        $scope.addProject() {
+        $scope.addProject= function () {
             $scope.item.Name = "New Project";
             $scope.editing = true;
         }
 
-        $scope.editProject(projectId) {
+        $scope.editProject = function (projectId) {
             $scope.item = angular.copy($scope.projects[$scope.projects.$indexFor(projectId)]);
             $scope.editId = projectId;
             $scope.editing = true;
         }
 
-        $scope.completeEdit() {
+        $scope.completeEdit = function () {
             if ($scope.editId === null) {
                 $scope.projects.add({
                     Name: $scope.item.Name,
@@ -39,28 +39,28 @@
             $scope.editing = false;
         }
 
-        $scope.abandonEdit() {
+        $scope.abandonEdit = function () {
             $scope.editId = null;
             $scope.editing = false;
         }
 
-        $scope.deleteProject(projectId) {
+        $scope.deleteProject = function (projectId) {
             $scope.editId = projectId;
             $scope.deleting = true;
         }
 
-        $scope.confirmDelete() {
+        $scope.confirmDelete = function () {
             $scope.projects.$remove($scope.projects.$indexFor($scope.editId));
             $scope.editId = null;
             $scope.deleting = false;
         }
 
-        $scope.abandonDelete() {
+        $scope.abandonDelete = function () {
             $scope.editId = null;
             $scope.deleting = false;
         }
 
-        $scope.openProject(projectId) {
+        $scope.openProject = function(projectId) {
 
         }
 
