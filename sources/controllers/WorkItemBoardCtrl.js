@@ -7,7 +7,8 @@
         $scope.item = {
             Name: null,
             Description: null,
-            NumWorkItems: 0,
+            ProjectId: $stateParams.projectId,
+            NumWorkItems: 0
         }
         $scope.editing = false;
         $scope.editId = null;
@@ -39,6 +40,7 @@
             $scope.item = {
                 Name: null,
                 Description: null,
+                ProjectId: $stateParams.ProjectId,
                 NumWorkItems: 0
             }
             $scope.editId = null;
