@@ -7,7 +7,7 @@
         $scope.item = {
             Name: null,
             Description: null,
-            NumWorkItems: 0,
+            NumWorkItems: 0
         }
         $scope.editing = false;
         $scope.editId = null;
@@ -18,7 +18,7 @@
             $scope.projects = result;
         });
 
-        $scope.addProject= function () {
+        $scope.addProject = function () {
             $scope.editing = true;
         }
 
