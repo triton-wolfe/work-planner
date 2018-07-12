@@ -7,14 +7,14 @@
         $scope.item = {
             Name: null,
             Description: null,
-            ProjectId: $stateParams.projectId,
+            ProjectId: $stateParams.ProjectId,
             NumWorkItems: 0
         }
         $scope.editing = false;
         $scope.editId = null;
         $scope.deleting = false;
 
-        var promise = firebaseSvc.getWorkItems($stateParams.projectId).$loaded();
+        var promise = firebaseSvc.getWorkItems($stateParams.ProjectId).$loaded();
         promise.then(function (result) {
             $scope.workItems = result;
         });
