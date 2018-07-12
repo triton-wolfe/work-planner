@@ -25,12 +25,12 @@
             .state('WorkItemBoard', {
                 url: "WorkItemBoard?ProjectId",
                 templateUrl: "/work-planner/sources/views/WorkItemBoard.html",
-                params: {
+                /*params: {
                     ProjectId: {
                         value: '',
                         squash: true
                     }
-                }
+                }*/
             })
             .state('TaskBoard', {
                 url: "TaskBoard?WorkItemId",
