@@ -1,0 +1,58 @@
+<div class="row" ng-controller="WorkItemBoardCtrl as vm">
+    <div class="col-md-10 container">
+        <table class="table-responsive table-hover">
+            <thead>
+                <tr>
+                    <th width="50px">&nbsp</th>
+                    <th class="text-center" width="150px">Work Item Name</th>
+                    <th class="text-center" width="300px">Description</th>
+                    <th class="text-center" width="200px">Number of Tasks</th>
+                    <th width="50px">&nbsp</th>
+                    <th width="50px">&nbsp</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="workItem in workItems" ng-mouseenter="workItem.show=true" ng-mouseleave="workItem.show=false">
+                    <td class="text-center" ng-show="!editing && !deleting" ng-click="openWorkItem(workItem.$id)">
+                        <i class="fa fa-bars" ng-show="workItem.show" aria-hidden="true"></i>
+                    </td>
+                    <td ng-show="editing || deleting">&nbsp</td>
+                    <td class="text-left">{{workItem.Name}}</td>
+                    <td class="text-left">
+                        <p markdown-to-html="workItem.Description || ''"></p>
+                    </td>
+                    <td class="text-center">{{workItem.NumTasks}}</td>
+                    <td class="text-center" ng-show="!editing && !deleting" ng-click="editWorkItem(WorkItem.$id)">
+                        <i class="fa fa-pencil-square-o" ng-show="workItem.show" aria-hidden="true"></i>
+                    </td>
+                    <td class="text-center" ng-show="!editing && !deleting" ng-click="deleteWorkItem(workItem.$id)">
+                        <i class="fa fa-times" ng-show="workItem.show" aria-hidden="true"></i>
+                    </td>
+                    <td ng-show="editing || deleting">&nbsp</td><td ng-show="editing || deleting">&nbsp</td>
+                </tr>
+                <tr ng-show="editing">
+                    <td>&nbsp</td>
+                    <td>
+                        <input class="form-control form-control-sm" form="text" ng-model="item.Name" placeholder="New Work Item"/>
+                    </td>
+                    <td>
+                        <input class="form-control form-control-sm" form="textarea" ng-model="item.Description" placeholder="Work Item Description" />
+                    </td>
+                    <td>&nbsp</td>
+                    <td class="text-center" ng-click="completeEdit()">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </td>
+                    <td class="text-center" ng-click="abandonEdit()">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-primary" ng-click="addWorkItem()" ng-show="!editing && !deleting">Add New Work Item</button>
+        <div ng-show="deleting">
+            <strong>Confirm Deletion?</strong><br />
+            <button class="btn btn-primary" ng-click="confirmDelete()">Confirm</button>
+            <button class="btn btn-primary" ng-click="abandonDelete()">Cancel</button>
+        </div>
+    </div>
+</div>

@@ -1,8 +1,8 @@
 (function () {
     angular.module('work-planner')
-    .controller('ProjectBoardCtrl', ['$scope', 'firebaseSvc', ProjectBoardCtrl]);
+    .controller('ProjectBoardCtrl', ['$scope', 'firebaseSvc', '$state', ProjectBoardCtrl]);
 
-    function ProjectBoardCtrl($scope, firebaseSvc) {
+    function ProjectBoardCtrl($scope, firebaseSvc, $state) {
         $scope.projects = [];
         $scope.item = {
             Name: null,
@@ -67,7 +67,7 @@
         }
 
         $scope.openProject = function(projectId) {
-
+            $state.go('WorkItemBoard', { ProjectId: projectId });
         }
 
     };
