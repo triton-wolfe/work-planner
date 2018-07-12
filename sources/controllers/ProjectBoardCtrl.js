@@ -33,6 +33,7 @@
                 $scope.projects.$add($scope.item);
             } else {
                 $scope.projects[$scope.projects.$indexFor($scope.editId)].Name = $scope.item.Name;
+                $scope.projects[$scope.projects.$indexFor($scope.editId)].Description = $scope.item.Description;
                 $scope.projects.$save($scope.projects.$indexFor($scope.editId));
             }
             $scope.item = {

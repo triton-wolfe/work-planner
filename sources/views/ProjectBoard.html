@@ -5,6 +5,7 @@
                 <tr>
                     <th width="50px">&nbsp</th>
                     <th class="text-center" width="150px">Project Name</th>
+                    <th class="text-center" width="300px">Description</th>
                     <th class="text-center" width="200px">Number Work Items</th>
                     <th width="50px">&nbsp</th>
                     <th width="50px">&nbsp</th>
@@ -17,6 +18,9 @@
                     </td>
                     <td ng-show="editing || deleting">&nbsp</td>
                     <td class="text-left">{{project.Name}}</td>
+                    <td class="text-left">
+                        <p markdown-to-html="project.Description"></p>
+                    </td>
                     <td class="text-center">{{project.NumWorkItems}}</td>
                     <td class="text-center" ng-show="!editing && !deleting" ng-click="editProject(project.$id)">
                         <i class="fa fa-pencil-square-o" ng-show="project.show" aria-hidden="true"></i>
@@ -30,6 +34,9 @@
                     <td>&nbsp</td>
                     <td>
                         <input class="form-control form-control-sm" form="text" ng-model="item.Name" placeholder="New Project"/>
+                    </td>
+                    <td>
+                        <input class="form-control form-control-sm" form="textarea" ng-model="item.Description" placeholder="Project Description" />
                     </td>
                     <td>&nbsp</td>
                     <td class="text-center" ng-click="completeEdit()">
