@@ -2,7 +2,7 @@
     angular.module('work-planner')
     .controller('WorkItemBoardCtrl', ['$scope', 'firebaseSvc', '$state', '$stateParams', WorkItemBoardCtrl]);
 
-    function WorkItemBoardCtrl($scope, firebaseSvc) {
+    function WorkItemBoardCtrl($scope, firebaseSvc, $state, $stateParams) {
         $scope.workItems = [];
         $scope.item = {
             Name: null,
