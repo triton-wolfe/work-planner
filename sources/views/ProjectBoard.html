@@ -19,7 +19,7 @@
                     <td ng-show="editing || deleting">&nbsp</td>
                     <td class="text-left">{{project.Name}}</td>
                     <td class="text-left">
-                        <p markdown-to-html="project.Description || """></p>
+                        <p markdown-to-html="project.Description || ''"></p>
                     </td>
                     <td class="text-center">{{project.NumWorkItems}}</td>
                     <td class="text-center" ng-show="!editing && !deleting" ng-click="editProject(project.$id)">
