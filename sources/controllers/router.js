@@ -30,7 +30,8 @@
                         value: '',
                         squash: true
                     }
-                }
+                },
+                reloadOnSearch: false
             })
             .state('TaskBoard', {
                 url: "/TaskBoard?WorkItemId",
@@ -40,7 +41,8 @@
                         value: '',
                         squash: true
                     }
-                }
+                },
+                reloadOnSearch: false
             })
             .state('EventList', {
                 url: "EventList",

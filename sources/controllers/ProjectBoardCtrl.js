@@ -1,13 +1,13 @@
 (function () {
     angular.module('work-planner')
-    .controller('ProjectBoardCtrl', ['$scope', 'firebaseSvc', ProjectBoardCtrl]);
+    .controller('ProjectBoardCtrl', ['$scope', 'firebaseSvc', '$state', ProjectBoardCtrl]);
 
-    function ProjectBoardCtrl($scope, firebaseSvc) {
+    function ProjectBoardCtrl($scope, firebaseSvc, $state) {
         $scope.projects = [];
         $scope.item = {
             Name: null,
             Description: null,
-            NumWorkItems: 0,
+            NumWorkItems: 0
         }
         $scope.editing = false;
         $scope.editId = null;
@@ -18,7 +18,7 @@
             $scope.projects = result;
         });
 
-        $scope.addProject= function () {
+        $scope.addProject = function () {
             $scope.editing = true;
         }
 
@@ -33,6 +33,7 @@
                 $scope.projects.$add($scope.item);
             } else {
                 $scope.projects[$scope.projects.$indexFor($scope.editId)].Name = $scope.item.Name;
+                $scope.projects[$scope.projects.$indexFor($scope.editId)].Description = $scope.item.Description;
                 $scope.projects.$save($scope.projects.$indexFor($scope.editId));
             }
             $scope.item = {
@@ -66,7 +67,7 @@
         }
 
         $scope.openProject = function(projectId) {
-
+            $state.go('WorkItemBoard', { ProjectId: projectId });
         }
 
     };
