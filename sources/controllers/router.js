@@ -23,7 +23,7 @@
                 params: {obj: null}
             })
             .state('WorkItemBoard', {
-                url: "WorkItemBoard?ProjectId",
+                url: "/WorkItemBoard?ProjectId",
                 templateUrl: "/work-planner/sources/views/WorkItemBoard.html",
                 params: {
                     ProjectId: {
@@ -33,7 +33,7 @@
                 }
             })
             .state('TaskBoard', {
-                url: "TaskBoard?WorkItemId",
+                url: "/TaskBoard?WorkItemId",
                 templateUrl: "/work-planner/sources/views/TaskBoard.html",
                 params: {
                     WorkItemId: {
