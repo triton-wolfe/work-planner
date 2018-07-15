@@ -3,7 +3,8 @@ angular.module('work-planner')
         return {
             restrict: "A",
             scope: {
-                project: '='
+                project: '=',
+                show: '='
             },
             controller: ['$scope', function($scope, $state) {
                 $scope.show = false;

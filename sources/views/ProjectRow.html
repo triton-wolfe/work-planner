@@ -7,6 +7,9 @@
 <td class="text-left" ng-show="vm.viewState === 'normal'">
     <div markdown-to-html="project.Description || ''"></div>
 </td>
+<td class="text-left" ng-show="vm.viewState === 'normal'">
+    {{project.NumWorkItems}}
+</td>
 <td class="text-center" ng-click="vm.edit()" ng-show="vm.viewState === 'normal'">
     <i class="fa fa-pencil-square-o" ng-show="show" aria-hidden="true"></i>
 </td>
@@ -24,6 +27,7 @@
 <td class="text-center" ng-click="vm.completeEdit()" ng-show="vm.viewState === 'editing'">
     <i class="fa fa-check" ng-show="show" aria-hidden="true"></i>
 </td>
+<td ng-show="vm.viewState === 'editing'">&nbsp;</td>
 <td class="text-center" ng-click="vm.abandonEdit()" ng-show="vm.viewState === 'editing'">
     <i class="fa fa-times" ng-show="show" aria-hidden="true"></i>
 </td>
