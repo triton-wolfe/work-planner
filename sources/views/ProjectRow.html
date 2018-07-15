@@ -1,5 +1,5 @@
 <tr ng-mouseenter="show=true" ng-mouseleave="show=false">
-    <div ng-switch="vm.viewState">
+    <div ng-switch on="vm.viewState">
         <div ng-switch-when="normal">
             <td class="text-center" ng-click="vm.open()">
                 <i class="fa fa-bars" ng-show="show" aria-hidden="true"></i>
