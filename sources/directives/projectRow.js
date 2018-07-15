@@ -32,7 +32,7 @@ angular.module('work-planner')
                 }
 
                 vm.completeDelete = function () {
-                    $scope.$emit('deleteProject', project.$id);
+                    $scope.$emit('deleteProject', $scope.project.$id);
                     vm.viewState = 'normal';
                 }
 
@@ -41,7 +41,7 @@ angular.module('work-planner')
                 }
 
                 vm.open = function () {
-                    $state.go('WorkItemBoard', { ProjectId: project.$id });
+                    $state.go('WorkItemBoard', { ProjectId: $scope.project.$id });
                 }
             }],
             templateUrl: '/work-planner/sources/views/ProjectRow.html'
