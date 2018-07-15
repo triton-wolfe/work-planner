@@ -1,7 +1,7 @@
 angular.module('work-planner')
     .directive('projectRow', function () {
         return {
-            restrict: "E",
+            restrict: "A",
             scope: {
                 project: '='
             },

@@ -12,7 +12,7 @@
                 </tr>
             </thead>
             <tbody>
-                <project-row ng-repeat="project in vm.projects" project="project" />
+                <tr project-row ng-repeat="project in vm.projects" project="project" ng-mouseenter="show=true" ng-mouseleave="show=false" />
                 <tr ng-show="vm.adding">
                     <td>&nbsp;</td>
                     <td>
