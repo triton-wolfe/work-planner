@@ -41,6 +41,6 @@ angular.module('work-planner')
                     $state.go('WorkItemBoard', { ProjectId: project.$id });
                 }
             }],
-            template: '/work-planner/sources/views/ProjectRow.html'
+            templateUrl: '/work-planner/sources/views/ProjectRow.html'
         }
     });
