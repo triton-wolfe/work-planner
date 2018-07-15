@@ -1,50 +1,48 @@
 <tr ng-mouseenter="show=true" ng-mouseleave="show=false">
-    <div ng-switch on="vm.viewState">
-        <div ng-switch-when="normal">
-            <td class="text-center" ng-click="vm.open()">
-                <i class="fa fa-bars" ng-show="show" aria-hidden="true"></i>
-            </td>
-            <td class="text-left">
-                <div markdown-to-html="project.Name"></div>
-            </td>
-            <td class="text-left">
-                <div markdown-to-html="project.Description || ''"></div>
-            </td>
-            <td class="text-center" ng-click="vm.edit()">
-                <i class="fa fa-pencil-square-o" ng-show="project.show" aria-hidden="true"></i>
-            </td>
-            <td class="text-center" ng-click="vm.delete()">
-                <i class="fa fa-times" ng-show="project.show" aria-hidden="true"></i>
-            </td>
-        </div>
-        <div ng-switch-when="editing">
-            <td>&nbsp;</td>
-            <td>
-                <input class="form-control form-control-sm" form="text" ng-model="item.Name" placeholder="Project Name" />
-            </td>
-            <td>
-                <input class="form-control form-control-sm" form="textarea" ng-model="item.Description" placeholder="Project Description" />
-            </td>
-            <td class="text-center" ng-click="vm.completeEdit()">
-                <i class="fa fa-check" ng-show="project.show" aria-hidden="true"></i>
-            </td>
-            <td class="text-center" ng-click="vm.abandonEdit()">
-                <i class="fa fa-times" ng-show="project.show" aria-hidden="true"></i>
-            </td>
-        </div>
-        <div ng-switch-when="deleting">
-            <td>&nbsp;</td>
-            <td>
-                <strong>Confrim Deletion?</strong>
-            </td>
-            <td>
-                <button class="btn btn-primary btn-sm" ng-click="vm.completeDelete()">Confirm</button>
-            </td>
-            <td>
-                <button class="btn btn-primary btn-sm" ng-click="vm.abandonDelete()">Cancel</button>
-            </td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </div>
+    <div ng-show="vm.viewState === 'normal'">
+        <td class="text-center" ng-click="vm.open()">
+            <i class="fa fa-bars" ng-show="show" aria-hidden="true"></i>
+        </td>
+        <td class="text-left">
+            <div markdown-to-html="project.Name"></div>
+        </td>
+        <td class="text-left">
+            <div markdown-to-html="project.Description || ''"></div>
+        </td>
+        <td class="text-center" ng-click="vm.edit()">
+            <i class="fa fa-pencil-square-o" ng-show="show" aria-hidden="true"></i>
+        </td>
+        <td class="text-center" ng-click="vm.delete()">
+            <i class="fa fa-times" ng-show="show" aria-hidden="true"></i>
+        </td>
+    </div>
+    <div ng-show="vm.viewState === 'editing'">
+        <td>&nbsp;</td>
+        <td>
+            <input class="form-control form-control-sm" form="text" ng-model="item.Name" placeholder="Project Name" />
+        </td>
+        <td>
+            <input class="form-control form-control-sm" form="textarea" ng-model="item.Description" placeholder="Project Description" />
+        </td>
+        <td class="text-center" ng-click="vm.completeEdit()">
+            <i class="fa fa-check" ng-show="show" aria-hidden="true"></i>
+        </td>
+        <td class="text-center" ng-click="vm.abandonEdit()">
+            <i class="fa fa-times" ng-show="show" aria-hidden="true"></i>
+        </td>
+    </div>
+    <div ng-show="vm.viewState ==== 'deleting'">
+        <td>&nbsp;</td>
+        <td>
+            <strong>Confrim Deletion?</strong>
+        </td>
+        <td>
+            <button class="btn btn-primary btn-sm" ng-click="vm.completeDelete()">Confirm</button>
+        </td>
+        <td>
+            <button class="btn btn-primary btn-sm" ng-click="vm.abandonDelete()">Cancel</button>
+        </td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
     </div>
 </tr>
