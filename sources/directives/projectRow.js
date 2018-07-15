@@ -6,7 +6,7 @@ angular.module('work-planner')
                 project: '=',
                 show: '='
             },
-            controller: ['$scope', function($scope, $state) {
+            controller: ['$scope', '$state', function($scope, $state) {
                 $scope.show = false;
                 var vm = {
                     viewState: 'normal'
