@@ -7,7 +7,7 @@
 <td class="text-left" ng-show="vm.viewState === 'normal'">
     <div markdown-to-html="project.Description || ''"></div>
 </td>
-<td class="text-left" ng-show="vm.viewState === 'normal'">
+<td class="text-center" ng-show="vm.viewState === 'normal'">
     {{project.NumWorkItems}}
 </td>
 <td class="text-center" ng-click="vm.edit()" ng-show="vm.viewState === 'normal'">
@@ -19,15 +19,17 @@
 
 <td ng-show="vm.viewState === 'editing'">&nbsp;</td>
 <td ng-show="vm.viewState === 'editing'">
-    <input class="form-control form-control-sm" form="text" ng-model="item.Name" placeholder="Project Name" />
+    <input class="form-control form-control-sm" form="text" ng-model="project.Name" placeholder="Project Name" />
 </td>
 <td ng-show="vm.viewState === 'editing'">
-    <input class="form-control form-control-sm" form="textarea" ng-model="item.Description" placeholder="Project Description" />
+    <input class="form-control form-control-sm" form="textarea" ng-model="project.Description" placeholder="Project Description" />
+</td>
+<td class="text-center" ng-show="vm.viewState === 'editing'">
+    {{project.NumWorkItems}}
 </td>
 <td class="text-center" ng-click="vm.completeEdit()" ng-show="vm.viewState === 'editing'">
     <i class="fa fa-check" ng-show="show" aria-hidden="true"></i>
 </td>
-<td ng-show="vm.viewState === 'editing'">&nbsp;</td>
 <td class="text-center" ng-click="vm.abandonEdit()" ng-show="vm.viewState === 'editing'">
     <i class="fa fa-times" ng-show="show" aria-hidden="true"></i>
 </td>
@@ -38,9 +40,8 @@
 </td>
 <td ng-show="vm.viewState === 'deleting'">
     <button class="btn btn-primary btn-sm" ng-click="vm.completeDelete()">Confirm</button>
-</td>
-<td ng-show="vm.viewState === 'deleting'">
     <button class="btn btn-primary btn-sm" ng-click="vm.abandonDelete()">Cancel</button>
 </td>
+<td ng-show="vm.viewState === 'deleting'">&nbsp;</td>
 <td ng-show="vm.viewState === 'deleting'">&nbsp;</td>
 <td ng-show="vm.viewState === 'deleting'">&nbsp;</td>
