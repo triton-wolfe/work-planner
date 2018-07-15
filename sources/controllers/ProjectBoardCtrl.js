@@ -2,73 +2,37 @@
     angular.module('work-planner')
     .controller('ProjectBoardCtrl', ['$scope', 'firebaseSvc', '$state', ProjectBoardCtrl]);
 
-    function ProjectBoardCtrl($scope, firebaseSvc, $state) {
-        $scope.projects = [];
-        $scope.item = {
-            Name: null,
-            Description: null,
-            NumWorkItems: 0
-        }
-        $scope.editing = false;
-        $scope.editId = null;
-        $scope.deleting = false;
+    function ProjectBoardCtrl($scope, firebaseSvc) {
+        var vm = $scope.vm;
+        vm.projects = [];
+
 
         var promise = firebaseSvc.getProjects().$loaded();
         promise.then(function (result) {
-            $scope.projects = result;
+            vm.projects = result;
         });
 
-        $scope.addProject = function () {
-            $scope.editing = true;
-        }
-
-        $scope.editProject = function (projectId) {
-            $scope.item = angular.copy($scope.projects[$scope.projects.$indexFor(projectId)]);
-            $scope.editId = projectId;
-            $scope.editing = true;
-        }
-
-        $scope.completeEdit = function () {
-            if ($scope.editId === null) {
-                $scope.projects.$add($scope.item);
-            } else {
-                $scope.projects[$scope.projects.$indexFor($scope.editId)].Name = $scope.item.Name;
-                $scope.projects[$scope.projects.$indexFor($scope.editId)].Description = $scope.item.Description;
-                $scope.projects.$save($scope.projects.$indexFor($scope.editId));
-            }
-            $scope.item = {
+        vm.addProject = function () {
+            vm.newItem = {
                 Name: null,
                 Description: null,
                 NumWorkItems: 0
             }
-            $scope.editId = null;
-            $scope.editing = false;
+            vm.adding = true;
         }
 
-        $scope.abandonEdit = function () {
-            $scope.editId = null;
-            $scope.editing = false;
+        vm.completeAdd = function () {
+            vm.projects.$add(vm.newItem);
+            vm.adding = false;
         }
 
-        $scope.deleteProject = function (projectId) {
-            $scope.editId = projectId;
-            $scope.deleting = true;
+        vm.abandonAdd = function () {
+            vm.adding = false;
         }
 
-        $scope.confirmDelete = function () {
-            $scope.projects.$remove($scope.projects.$indexFor($scope.editId));
-            $scope.editId = null;
-            $scope.deleting = false;
-        }
-
-        $scope.abandonDelete = function () {
-            $scope.editId = null;
-            $scope.deleting = false;
-        }
-
-        $scope.openProject = function(projectId) {
-            $state.go('WorkItemBoard', { ProjectId: projectId });
-        }
+        $scope.on('deleteProject', function (event, id) {
+            vm.projects.$remove(vm.projects.$indexFor(id));
+        })
 
     };
 })();
