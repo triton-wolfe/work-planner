@@ -30,7 +30,7 @@
             vm.adding = false;
         }
 
-        $scope.on('deleteProject', function (event, id) {
+        $scope.$on('deleteProject', function (event, id) {
             vm.projects.$remove(vm.projects.$indexFor(id));
         })
 
