@@ -7,9 +7,10 @@ angular.module('work-planner')
             },
             controller: ['$scope', function($scope, $state) {
                 $scope.show = false;
-                $scope.vm = {
+                var vm = {
                     viewState: 'normal'
                 }
+                $scope.vm = vm;
 
                 vm.edit = function () {
                     vm.viewState = 'editing';
