@@ -10,7 +10,10 @@
         }
 
         this.getWorkItems = function (projectId) {
-            return $firebaseArray(dbRef.child('WorkItems').orderByChild('ProjectId').equalTo(projectId));
+            if (!projectId) {
+                return $firebaseArray(dbRef.child('WorkItems').orderByChild('ProjectId').equalTo(projectId));
+            }
+            return $firebaseArray(dbRef.child('WorkItems'));
         }
 
         this.getTasks = function(workItemId) {

@@ -53,6 +53,10 @@ tr {
     cursor: not-allowed;
 }
 
+.btn.btn-primary.btn-primary-sm {
+    padding: .125em .5em;
+}
+
 .bg-beige.navbar-light {
     background-color: #dcdcc6
 }
