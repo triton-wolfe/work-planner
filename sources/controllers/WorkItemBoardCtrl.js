@@ -8,7 +8,7 @@
 
         var promise = firebaseSvc.getWorkItems($stateParams.ProjectId).$loaded();
         promise.then(function (result) {
-            $scope.workItems = result;
+            vm.workItems = result;
         });
 
         vm.addWorkItem = function () {
