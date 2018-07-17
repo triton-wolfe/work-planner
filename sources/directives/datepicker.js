@@ -1,4 +1,4 @@
-angular().module('work-planner')
+angular.module('work-planner')
 directive('datetimepicker', ['$timeout',
     function ($timeout) {
         return {
